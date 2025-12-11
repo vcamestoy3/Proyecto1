@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "correr":"playwright test",
-    "reportar": "playwright show-report"
+    "reportar": "playwright show-report",
+    "mostrarnavegador": "npx playwright test --headed"
   },
   "keywords": [],
   "author": "",
