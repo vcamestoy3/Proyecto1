@@ -15,7 +15,8 @@ test('login empty name', async ({ page }) => {
   await page.fill('#password', 'SuperSecretPassword!');
   await page.click('button[type="submit"]');
   // No tiene # . entonces es un html tag - y el atributo se pone entre corchete
-  await expect(page.locator('.flash.error')).toContainText(' Your username is invalid! ');
+  // TO DO validate if we can use toHaveText
+  await expect(page.locator('.flash.error')).toContainText('Your username is invalid!');
   //. El primer punto sidentifica la clase
   // Si la clase tiene un nombre con espacio se debe unir las palabras con punto
 
