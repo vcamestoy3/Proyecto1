@@ -7,7 +7,7 @@ test('login', async ({ page }) => {
   await expect(page).toHaveTitle(/Playwright/);*/
 });
 
-test('login empty name', async ({ page }) => {
+test('when_username_is_empty_then_login_failed', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/login');
   await page.fill('#username', '');
   // # identifica el ID
