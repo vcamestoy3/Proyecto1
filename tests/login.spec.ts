@@ -16,7 +16,7 @@ test('when_username_is_empty_then_login_failed', async ({ page }) => {
   await page.click('button[type="submit"]');
   // No tiene # . entonces es un html tag - y el atributo se pone entre corchete
   // TO DO validate if we can use toHaveText
-  await expect(page.locator('.flash.error')).toContainText('Your username is invalid!');
+  await expect(page.locator('.flash.error')).toHaveText("            Your username is invalid!            ×");
   //. El primer punto sidentifica la clase
   // Si la clase tiene un nombre con espacio se debe unir las palabras con punto
 
@@ -26,7 +26,12 @@ test('login empty name and password', async ({ page }) => {
   await page.fill('#username', '');
   await page.fill('#password', '');
   await page.click('button[type="submit"]');
-  await expect(page.locator('.flash.error')).toContainText('Your username is invalid!');
+  await expect(page.locator('.flash.error')).toHaveText(
+  `            Your username is invalid!
+            ×
+           `
+);
+
 });
 
 test('login invaldid name', async ({ page }) => {

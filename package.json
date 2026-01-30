@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "correr":"playwright test",
+    "correr": "playwright test",
     "reportar": "playwright show-report",
     "mostrarnavegador": "npx playwright test --headed"
   },
@@ -14,5 +14,8 @@
   "devDependencies": {
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.2"
+  },
+  "dependencies": {
+    "playwright": "^1.58.0"
   }
 }
